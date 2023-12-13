@@ -1,0 +1,338 @@
+\documentclass[11pt]{article}
+
+% ================ PACKAGES ====================
+
+\usepackage{layout}
+\usepackage[reset, a4paper, top=7mm, right=4mm]{geometry}
+% text alignment
+\usepackage{ragged2e}
+% loremipsum
+\usepackage{lipsum}
+% text color
+\usepackage{color}
+\usepackage{xcolor}
+% underline
+\usepackage{ulem}
+\usepackage{contour}
+% multiple columns
+\usepackage{paracol}
+% custom fonts
+\usepackage{fontspec}
+% paper bg
+\usepackage{eso-pic}
+% icons
+\usepackage{fontawesome5}
+% hyperlinks
+\usepackage{hyperref}
+% better itemize
+\usepackage{enumitem}
+
+% ================ SETTINGS ====================
+\setlength{\hoffset}{-1in}
+\setlength{\marginparwidth}{0pt}
+\setlength{\marginparsep}{0pt}
+\setlength{\textwidth}{0.95\paperwidth}
+
+
+\setlist[itemize]{noitemsep, topsep=-2pt, leftmargin=2ex}
+
+\setromanfont{CormorantGaramond}
+\setsansfont{SourceSerifPro}
+\renewcommand{\familydefault}{\rmdefault}
+
+% no page numbers and the sorts
+\thispagestyle{empty}
+% no indentation at beginning of paragraph
+\parindent=0pt
+% for underline
+\renewcommand{\ULdepth}{3pt}
+\renewcommand{\ULthickness}{0.5pt}
+\contourlength{2.0pt}
+
+% for links
+\hypersetup{
+    colorlinks=false,
+    pdfborder = {0 0 0},
+}
+
+% no hyphenation
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% ================ MACROS ======================
+
+\newfontfamily\titlethin{CormorantGaramond-Light}
+\newfontfamily\titlethick{CormorantGaramond-Medium}
+\newfontfamily\titlebold{CormorantGaramond-Bold}
+\newfontfamily\normaltext{SourceSerifPro}
+
+\newcommand{\resumetitle}[3]{
+    \AddToShipoutPictureBG{
+        \AtPageUpperLeft {
+        \raisebox{-0.09\paperheight}{
+            \color{black!90}\rule{2\paperwidth}{\paperheight}
+            }
+        }
+    }
+    \begin{Center}
+        \begingroup
+        \titlethin
+        \color{black!10}\Huge{#1}
+        \titlethick
+        \color{black!5}\Huge{#2} \\
+        \vspace{2mm}
+        \textrm{\color{black!15}\Large{#3}}
+        \endgroup
+    \end{Center}
+    \vspace{7mm}
+}
+
+\newcommand{\betteruline}[1]{
+    \uline{#1}
+}
+
+\newcommand{\sectiontitle}[1]{
+    \begingroup
+        \titlebold
+        \betteruline{\Large\uppercase{#1}  }
+        \vspace{1.7mm}
+    \endgroup
+}
+
+\newcommand{\sectioncontent}[1]{
+    \begingroup
+        \begin{FlushLeft}
+        \vspace{-3mm}
+        \sffamily\small#1
+        \end{FlushLeft}
+    \endgroup
+    \vspace{2mm}
+}
+
+\newcommand{\job}[3]{
+    \begingroup
+        \textbf{\small#1} - \small#2
+        \hfill\color{black!70}\small{#3}
+    \endgroup
+}
+
+\newcommand{\project}[2]{
+    \begingroup
+        \textbf{\small#1}
+        \hfill\color{black!70}\small{#2}
+    \endgroup
+}
+
+\newcommand{\spacevv}{
+    \vspace{2mm}
+}
+
+\newcommand{\honor}[2]{
+    \textcolor{black!70}{#1} - #2 \\
+    \vspace{1.5mm}
+}
+
+\begin{document}
+    \resumetitle{Razvan-Petru}{Puha} {
+        puha.razvan@phrsoftsolutions.com
+    }
+
+    \columnratio{0.31}
+    \setlength{\columnsep}{7mm}
+    \begin{paracol}{2}
+
+    \sectiontitle{about me}
+    \sectioncontent{
+        I am a result-driven Backend Engineer with over 8 years of experience in app/web development, currently in the process of transitioning to a Full-Stack Engineer expertise (I started as a Backend Engineer back in the day)
+        \spacevv
+        \spacevv
+        
+        I've worked with various product teams, with sizes reaching from a one-man show to having more than 10-15 colleagues.
+        \spacevv
+        \spacevv
+        
+        I have experience in developing desktop/web/mobile applications, working with monoliths, as well as with APIs/microservices.
+        \spacevv
+        \spacevv
+        
+        I'm able to provide my expertise in backend/frontend or even DevOps if it's required.
+    }
+
+    \sectiontitle{education}
+    \sectioncontent{
+        \vspace{2mm}
+        \textbf{Graduated} \\
+        Faculty of Computer Science – „Alexandru Ioan Cuza” University, Iasi, Iasi County \\
+        \textcolor{black!70}{2013 - 2016} \\
+    }
+
+    \sectiontitle{links}
+    \sectioncontent{
+        % \faIcon{github-alt}\hspace{2mm}
+        % \href{example.com}{github} \\
+        \faIcon{linkedin-in}\hspace{2.1mm}
+        \href{https://www.linkedin.com/in/razvan-petru-puha-5a4582120/}{linkedin} \\
+        % \faIcon{link}\hspace{1.8mm}
+        % \href{example.com}{website}
+    }
+
+    \sectiontitle{tech stack}
+    \sectioncontent{
+        \begin{itemize}
+            \item \textbf{Languages:} \\
+            Java, SQL, JavaScript/TypeScript, Golang
+            \item  \textbf{Technologies:} \\
+            Spring/Spring Boot, React/React Native, Next.js, Hibernate, Prisma, PostgreSQL, Git, Github Actions, Docker, Kubernetes, Kafka, GCP, AWS
+        \end{itemize}  
+    }
+
+    % \sectiontitle{Honors \& Awards}
+    % \sectioncontent{
+    %     \honor{Date}{Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet.}
+    %     \honor{Date}{ Libero justo laoreet sit amet cursus sit amet.}
+    %     \honor{Date}{ Est velit egestas dui id ornare arcu odio ut sem. Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet.}
+
+    % }
+
+    % \sectiontitle{Hobbies \& Interests}
+    % \sectioncontent{
+    %     Est sit amet facilisis magna etiam.\\
+    %     Ut eu sem integer vitae justo eget magna fermentum iaculis. \\
+    % }
+
+    \switchcolumn
+    % \layout
+    \sectiontitle{experience}
+    \sectioncontent{
+      \job{Wisesystems}{Senior Backend Engineer}{Apr 2023 - Jun 2023}
+      \begin{itemize}
+          \item B2B, fixed-term contract
+          \item Helped the client’s team deliver the backend side for an MVP, which consisted of an API collection designed for communicating with a collection of games
+          \item Main services provided: auth (user&pass / social), payment handling, avatar/nft creation management, game inventory (purchasable items inside the games)
+      \end{itemize}
+      \item During my period here, I helped in splitting the old APIs (built as a               distributed monolith) into self-contained, independently deployable                 microservices, in order to maintain consistency with the new APIs being added.
+            I was also in charge of adding new features to the existing APIs, along with providing support to the frontend/game designers team; with the requirements consistently changing, I’ve managed to keep the same level of availability and consistency of the backend services.
+      \item \textbf{Tech Stack:} Java, Spring, Go, Gin, AWS, Git, Github Actions, Web3j
+      \spacevv
+      \spacevv
+      \spacevv
+      
+      \job{Neckdei Solutions}{Full Stack Engineer}{Jun 2022 - Jul 2023}
+      \begin{itemize}
+          \item B2B, fixed-term contract
+          \item Was responsible for the entire project from scratch, working as sole developer.
+          \item Built a platform for improving relations between institutions (public and private) and possible clients; the users can contact, leave feedback/suggestions, etc. to the institutions and track updates on those operations.
+          \item It was designed as a mobile app, deployable to Google \& Apple stores. The backend is deployed using GCP's Cloud Run. The database used for storing the data is also stored inside GCP.
+      \end{itemize}
+      \item \textbf{Tech Stack:} React Native, Go, Gin, Google Cloud Platform, Git, Docker
+      \spacevv
+      \spacevv
+      \spacevv
+
+      \job{Adobe}{Full Stack Engineer}{May 2021 - Jan 2022}
+      \begin{itemize}
+        \item B2B, fixed-term contract
+        \item My responsibility was to offer support \& optimize/develop new frontend/backend functionalities for the Identity services (services used for the authorization \& authentication of the clients across the Adobe platform)
+        \item Helped in rewriting the social sign-in/sign-up functionality for Google IDP
+      \end{itemize}
+      \item \textbf{Tech Stack:} Java 8, Spring, Maven, Git, Jenkins, Jira, TestNG, Mockito, React.js, SCSS, Kotlin
+      \spacevv
+      \spacevv
+      \spacevv
+
+      \job{METRO SYSTEMS}{Senior Backend Engineer}{Jan 2021 - May 2021}
+      % \begin{itemize}
+      %     \item B2B, fixed-term contract
+      %     \item Worked with a collection of microservices that provided clients with the possibility
+      %       to store documents \& receive notifications whenever documents they are following were updated.
+      %     \item Managed to keep the same performances, disregarding the traffic/volume of data
+      %       present inside the product (at the moment of my joining it was already about a few TB of data and 20k-30k+ requests daily)
+      % \end{itemize}
+      \item \textbf{Tech Stack:} Java (8 \& 11), Spring, Docker, Kubernetes, Maven, Git, Cassandra, Jenkins, Jira, GCP, JUnit, Mockito, Apache Solr, Kafka
+      \spacevv
+      \spacevv
+      \spacevv
+
+      \job{Cognizant Softvision}{Mid Backend Engineer}{2019 - 2020}
+      \item \textbf{Tech Stack:} Java 8, Spring, Hibernate, PostgreSQL, Drone, Microsoft Azure, Junit, Mockito
+      \spacevv
+      \spacevv
+      \spacevv
+
+      \job{Luxoft}{Mid Backend Engineer}{2018 - 2019}
+      \item \textbf{Tech Stack:} Java SE 8, Maven, Perforce, Lombok, Jenkins, Jira, JAXB, Jackson, JUnit, Mockito
+      \spacevv
+      \spacevv
+      \spacevv
+
+      \job{UniCredit Business Integrated Solutions}{Junior Backend Engineer}{2015 - 2018}
+    }
+
+    % \sectiontitle{personal projects}
+    % \sectioncontent{
+
+    %     \project{\href{example.com}{name}}{date}
+    %     \begin{itemize}
+    %         \item  Libero enim sed faucibus turpis in. 
+    %         \item Eu mi bibendum neque egestas congue quisque. Quis vel eros donec ac. Congue nisi vitae suscipit tellus mauris a diam maecenas sed.
+    %     \end{itemize}
+    %     \spacevv
+
+    %     \project{\href{example.com}{name}}{date}
+    %     \begin{itemize}
+    %         \item Id ornare arcu odio ut sem nulla. 
+    %         \item Id porta nibh venenatis cras. 
+    %     \end{itemize}
+    %     \spacevv
+       
+    %     \project{\href{example.com}{name}}{date}
+    %     \begin{itemize}
+    %         \item  Libero enim sed faucibus turpis in. 
+    %         \item Eu mi bibendum neque egestas congue quisque. Quis vel eros donec ac. Congue nisi vitae suscipit tellus mauris a diam maecenas sed.
+    %     \end{itemize}
+    %     \spacevv
+
+    %     \project{\href{example.com}{name}}{date}
+    %     \begin{itemize}
+    %         \item Id ornare arcu odio ut sem nulla. 
+    %         \item Id porta nibh venenatis cras. 
+    %     \end{itemize}
+    %     \spacevv
+    % }
+
+    % \sectiontitle{volunteering}
+    % \sectioncontent{
+      
+    %       \job{Name}{Title}{Date}
+    %       \begin{itemize}
+    %         \item Dictum varius duis at consectetur lorem donec massa sapien faucibus. Est ultricies integer quis auctor. 
+    %         \item Et ligula ullamcorper malesuada proin libero. 
+    %       \end{itemize}
+    %       \spacevv
+        
+    %       \job{Name}{Title}{Date}
+    %       \begin{itemize}
+    %         \item Aliquet nec ullamcorper sit amet risus. 
+    %         \item Ultrices neque ornare aenean euismod elementum nisi quis. Sed elementum tempus egestas sed.
+    %       \end{itemize}
+        
+    %       \job{Name}{Title}{Date}
+    %       \begin{itemize}
+    %         \item Dictum varius duis at consectetur lorem donec massa sapien faucibus. Est ultricies integer quis auctor. 
+    %         \item Et ligula ullamcorper malesuada proin libero. 
+    %       \end{itemize}
+    %       \spacevv
+        
+    %       \job{Name}{Title}{Date}
+    %       \begin{itemize}
+    %         \item Aliquet nec ullamcorper sit amet risus. 
+    %         \item Ultrices neque ornare aenean euismod elementum nisi quis. Sed elementum tempus egestas sed.
+    %       \end{itemize}
+    % }
+
+    % \normaltext \hfill \tiny Last updated \today
+
+    \end{paracol}
+\end{document}
