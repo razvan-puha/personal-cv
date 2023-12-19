@@ -33,8 +33,8 @@
 
 \newlength{\rightcolwidth}
 \newlength{\leftcolwidth}
-\setlength{\leftcolwidth}{0.48\textwidth}
-\setlength{\rightcolwidth}{0.47\textwidth}
+\setlength{\leftcolwidth}{0.45\textwidth}
+\setlength{\rightcolwidth}{0.495\textwidth}
 
 %------------------------------------------------------------------
 \title{Razvan-Puha-CV}
@@ -109,7 +109,7 @@
     \vspace{-3em}
     
     \setlength{\columnsep}{2cm}
-    \columnratio{0.48}[0.47]
+    \columnratio{0.45}[0.47]
     \begin{paracol}{2}
     \hbadness5000
     %\backgroundcolor{c[1]}[rgb]{1,1,0.8} % cream yellow for column-1 %\backgroundcolor{g}[rgb]{0.8,1,1} % \backgroundcolor{l}[rgb]{0,0,0.7} % dark blue for left margin
@@ -151,7 +151,7 @@
     
         \bigskip
     
-        \begin{minipage}[t]{\rightcolwidth}
+        \begin{minipage}[t]{\leftcolwidth}
             \vspace{0.2cm} % For alignment
             \small
             \section*{\faNewspaperO~ Work Experience - Employee}
@@ -178,7 +178,7 @@
     
         \begin{minipage}[t]{\rightcolwidth}
             \small
-            \section*{\faCode~ Personal Projects} 
+            \section*{\hspace{1mm}\faLaptop~ Personal Projects} 
             
             \begin{tabular}{p{3em} | p{0.6\textwidth} c}
                 \personalproject{2023}{Archive Utilitary}{
@@ -193,7 +193,7 @@
     
         \begin{minipage}[t]{\rightcolwidth}
             \small
-            \section*{\faInfo~ About me}
+            \section*{\hspace{2mm}\faInfo~ About me}
             
             Backend Engineer with over 8 years of experience in developing desktop/web/mobile applications, with a keen and active interest in full-stack development in the last 2 years, currently activating as a contractor/freelancer.
         \end{minipage}
@@ -202,7 +202,7 @@
     
         \begin{minipage}[t]{\rightcolwidth}
             \small
-            \section{\faCode~ Programming} 
+            \section{\hspace{1mm}\faCogs~ Programming} 
             {
                 \small
                 I've worked with various product teams, with sizes reaching from a sole developer to having more than 10-15 colleagues.\\
